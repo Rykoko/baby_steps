@@ -42,4 +42,6 @@ password = ''
 for c in range(per_chars):
     password += random.choice(characters)
 
-print(password)
+print('Generating password...')
+time.sleep(1)
+print("\n\n", password, "\n\n")
