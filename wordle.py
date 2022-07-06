@@ -8,10 +8,8 @@ print('===WORD GUESS===')
 
 
 def get_valid_word(words):
-    word = random.choice(words)  # randomly chooses something from the list
-    # while '-' in word or ' ' in word:
-    #     word = random.choice(words)
-
+    # randomly chooses something from the list
+    word = random.choice(words)
     return word.upper()
 
 # Gameplay
@@ -37,9 +35,9 @@ def word_guess():
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
             if user_letter in letters:
-                  letters.remove(user_letter)
+                letters.remove(user_letter)
             else:
-                  lives -= 1
+                lives -= 1
         elif user_letter in used_letters:
             print('You have already used that letter')
 
