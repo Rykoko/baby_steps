@@ -1,7 +1,5 @@
 # baby_steps
 
-# First six projects completed solo in Python
-
-# Plan to move to more intermediate projects
-
-# Moving onto SQL and Django projects too
+# First steps into coding programs on my own with as limited outside help as possible
+# All the empty projects are on my list to do before I move onto more difficult projects
+# Planning on starting a repository for Django projects and GUI projects too 
