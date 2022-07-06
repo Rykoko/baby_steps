@@ -14,7 +14,7 @@ while attempts > 0:
 
     guess1 = input('Guess a number between 1 and 10 --> ')
     guess = int(guess1)
-
+  
     if guess > 10 or guess < 1:
         print('Invalid input, guess a number between 1 and 10')
 
