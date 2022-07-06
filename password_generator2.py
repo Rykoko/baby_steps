@@ -2,17 +2,9 @@
 
 import time
 import random
-
-# Function for string slicing
-
-
-def slice(string):
-    list1 = []
-    list1[0:] = string
-    return list1
+from random import choice
 
 # Take user input
-
 
 intro = print(
     'What words or numbers would you like to use, \nyou will be asked for three seperate inputs:\n\n')
@@ -26,22 +18,25 @@ entry3 = input('Third Word or Number: ')
 
 characters = (entry1 + entry2 + entry3)
 
+# Mix the string between upper and lowercase characters
+
+mix = ''.join(choice((str.upper, str.lower))(char) for char in characters)
+
 # Length of characters for percentage
 
 len_chars = len(characters)
 per_chars = (int((len_chars/100)*70))
-
-# Make list of individual characters
-
-slice_list = slice(characters)
 
 # Generate password
 
 password = ''
 
 for c in range(per_chars):
-    password += random.choice(characters)
+    password += random.choice(mix)
+
+# Print it!
 
 print('Generating password...')
 time.sleep(1)
+
 print("\n\n", password, "\n\n")
