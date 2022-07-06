@@ -30,18 +30,10 @@ characters = (entry1 + entry2 + entry3)
 
 len_chars = len(characters)
 per_chars = (int((len_chars/100)*70))
-print(per_chars)
 
 # Make list of individual characters
 
 slice_list = slice(characters)
-print(slice_list, "\n\n")
-
-# Make new list for password containing only 70% of characters
-
-# new_list = [x for x in slice_list if x not in [
-#     random.choice(slice_list) for i in range(int(len(slice_list)*0.3))]]
-# print(new_list)
 
 # Generate password
 
