@@ -25,11 +25,11 @@ def word_guess():
 
     while len(letters) > 0 and lives > 0:
         print('You have', lives, 'lives left and you have used these letters: ',
-              ' '.join(used_letters))
+              ' '.join(used_letters), '\n\n')
 
         word_fill = [
                 letter if letter in used_letters else '-' for letter in word]
-        print('Current word: ', ' '.join(word_fill))
+        print('Current word: ', ' '.join(word_fill), '\n\n')
 
         user_letter = input('Guess a letter: ').upper()
         if user_letter in alphabet - used_letters:
@@ -47,9 +47,9 @@ def word_guess():
 
 # Gets here when len(word_letters) == 0 OR when lives == 0
     if lives == 0:
-        print('Game over! Word was', word)
+        print('\n\nGame over! Word was', word, '\n\n')
     else:
-        print('You guessed the word:', word, '!!')
+        print('\n\nYou guessed the word:', word, '!!', '\n\n')
 
 
 word_guess()

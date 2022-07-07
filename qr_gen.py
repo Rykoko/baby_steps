@@ -5,6 +5,6 @@ from PIL import Image
 # im1.save(r'Cucu.png')
 
 
-img = qrcode.make('Hey what\'s up!?')
+img = qrcode.make('VAL GIVE ME ATTENTION!!')
 
 img.save("sample.png")
