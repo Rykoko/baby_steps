@@ -310,6 +310,7 @@ def declaring():
               format(round(km2*0.00000000155, 4)))
         print('Acres: ', format(round(km2*247.105, 4)))
         print('Hectares: ', format(round(km2*100, 4)))
+        print('')
     # if value is in m2
     elif x in M2:
         m2 = float(y)
@@ -321,6 +322,7 @@ def declaring():
         print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round(m2*1550, 4)))
         print('Acres: ', format(round(m2*0.000247105, 4)))
         print('Hectares: ', format(round(m2*0.0001, 4)))
+        print('')
     # if value is in mile2
     elif x in MILE2:
         mile2 = float(y)
@@ -333,6 +335,7 @@ def declaring():
               format(round(mile2*4014000000, 4)))
         print('Acres: ', format(round(mile2*640, 4)))
         print('Hectares: ', format(round(mile2*258.99, 4)))
+        print('')
     # if value is in acres
     elif x in ACRE:
         acre = float(y)
@@ -366,6 +369,7 @@ def declaring():
         print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
         print('Acres: ', format(round()))
         print('Hectares: ', format(round()))
+        print('')
     # if value is in feet2
     elif x in F2:
         f2 = float(y)
@@ -377,6 +381,7 @@ def declaring():
         print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
         print('Acres: ', format(round()))
         print('Hectares: ', format(round()))
+        print('')
     # if value is in inches2
     elif x in IN2:
         in2 = float(y)
@@ -388,6 +393,7 @@ def declaring():
         print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
         print('Acres: ', format(round()))
         print('Hectares: ', format(round()))
+        print('')
 
 
 declaring()
