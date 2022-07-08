@@ -47,16 +47,25 @@ CENTIMETERS = ['cm', 'cms', 'CM', 'CMs', 'centimeters', 'Centimeters']
 yards = 0
 YARDS = ['yard', 'yards', 'where is the wall?']
 
-convert = input(
-    "What would you like to convert (speed, temp, area, distance, weight)? ")
-
-
-# Converting temperature values
-if convert in temp_list:
-    x = input('What are you converting from (celcius, fahrenheit, kelvin)? ')
-    print('')
-    y = input('Insert value to be converted: ')
-    print('')
+def declaring():
+    convert = input(
+        "What would you like to convert (speed, temp, area, distance, weight)? ")
+    if convert in temp_list:
+        x = input('What are you converting from (celcius, fahrenheit, kelvin)? ')
+        print('')
+        y = input('Insert value to be converted: ')
+        print('')
+    elif convert in speed_list:
+        x = input('What are you converting from (km/h, mph, m/s, kn)?  ')
+        print('')
+        y = input('Insert value to be converted: ')
+        print('')
+    elif convert in dis_list:
+        x = input(
+            'What are you converting from (km, miles, feet, meters, inches, centimeters, yards)?  ')
+        print('')
+        y = input('Insert value to be converted: ')
+        print('')
 
     # if value inputted is celcius
     if x in CELCIUS:
@@ -80,11 +89,6 @@ if convert in temp_list:
         print('')
 
 # Converting speed values
-elif convert in speed_list:
-    x = input('What are you converting from (km/h, mph, m/s, kn)?  ')
-    print('')
-    y = input('Insert value to be converted: ')
-    print('')
 
     # if value inputted is km/h
     if x in KMH:
@@ -93,7 +97,7 @@ elif convert in speed_list:
         print('Knots: ', round((kmh*0.539957)))
         print('m/s: ', round((kmh*0.277778)))
         print('')
-        # if value inputted is M/S
+    # if value inputted is M/S
     elif x in MS:
         ms = int(y)
         print('Km/h: ', round(ms*3.6))
@@ -115,17 +119,77 @@ elif convert in speed_list:
         print('MPH: ', round(kn*1.15078))
         print('')
 
-elif convert in dis_list:
-    x = input(
-        'What are you converting from (km, miles, feet, meters, inches, centimeters, yards)?  ')
-    print('')
-    y = input('Insert value to be converted: ')
-    print('')
-    if x in dis_list:
+# converting distance values
+    # if value is in kilometers
+    if x in KM:
         km = int(y)
-        print('Miles: ', round())
-        print('Feet: ', round())
-        print('Yards:', round())
-        print('Meters: ', round())
-        print('Kilometers: ', round())
-        print('Inches: ', round())
+        print('Miles: ', round(km*0.621371))
+        print('Feet: ', round(km*3280.84))
+        print('Yards:', round(km*1093.61))
+        print('Inches: ', round(39370.1))
+        print('Meters: ', round(km*1000))
+        print('Centimeters: ', round(km*100000))
+        print('')
+    # if value is in miles
+    elif x in MILES:
+        miles = int(y)
+        print('Kilometers: ', round(miles*1.60934))
+        print('Meters: ', round(miles*1609.34))
+        print('Feet: ', round(miles*5280))
+        print('Yards:', round(miles*1760))
+        print('Inches: ', round(miles*63360))
+        print('Centimeters: ', round(miles*160934))
+        print('')
+    # if value is in meters
+    elif x in METERS:
+        meters = int(y)
+        print('Kilometers: ', round(meters*0.001))
+        print('Miles: ', round(meters*0.000621371))
+        print('Feet: ', round(meters*3.28084))
+        print('Yards:', round(meters*1.09361))
+        print('Inches: ', round(meters*39.3701))
+        print('Centimeters: ', round(meters*100))
+        print('')
+    # if value is in feet
+    elif x in FEET:
+        feet = int(y)
+        print('Kilometers: ', round(feet*0.0003048))
+        print('Meters: ', round(feet*0.3048))
+        print('Miles: ', round(feet*0.000189394))
+        print('Yards:', round(feet*0.333333))
+        print('Inches: ', round(feet*12))
+        print('Centimeters: ', round(feet*30.48))
+        print('')
+    # if value is in yards
+    elif x in YARDS:
+        yards = int(y)
+        print('Kilometers: ', round(yards*0.0009144))
+        print('Meters: ', round(yards*0.9144))
+        print('Miles: ', round(yards*0.000568182))
+        print('feet:', round(yards*3))
+        print('Inches: ', round(yards*36))
+        print('Centimeters: ', round(yards*91.44))
+        print('')
+    # if value is in inches
+    elif x in INCHES:
+        inches = int(y)
+        print('Kilometers: ', round(inches*0.0000254))
+        print('Meters: ', round(inches*0.0254))
+        print('Miles: ', round(inches*0.000015783))
+        print('feet:', round(inches*0.0833333))
+        print('Yards: ', round(inches*0.0277778))
+        print('Centimeters: ', round(inches*2.54))
+        print('')
+    elif x in CENTIMETERS:
+        centimeters = int(y)
+        print('Kilometers: ', round(centimeters*0.00001))
+        print('Meters: ', round(centimeters*0.01))
+        print('Miles: ', round(centimeters*0.0000062137))
+        print('feet:', round(centimeters*0.0328084))
+        print('Yards: ', round(centimeters*0.0109361))
+        print('inches: ', round(centimeters*0.393701))
+        print('')
+
+    
+
+declaring()
