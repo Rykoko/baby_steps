@@ -3,8 +3,6 @@
 # Have a function for each field
 # Offer two input fields and convert to opposite chosen
 
-import time
-
 # input options
 temp_list = ['temp', 'temperature', 'Temp', 'Temperature']
 speed_list = ['speed', 'Speed', 'velocity', 'Velocity']
@@ -41,7 +39,7 @@ FEET = ['Foot', 'foot', 'feet', 'foots', '"']
 meters = 0
 METERS = ['m', 'meters', 'Meters']
 inches = 0
-INCHES = ['inches', "'", 'inch', 'Inch', 'Inches']
+INCHES = ['inches', "'", 'inch', 'Inch', 'Inches', 'in', 'ins']
 centimeters = 0
 CENTIMETERS = ['cm', 'cms', 'CM', 'CMs', 'centimeters', 'Centimeters']
 yards = 0
@@ -296,12 +294,10 @@ def declaring():
         print('Stone: ', format(round(lbs*0.0714286, 4)))
         print('')
 
-# *** === TESTED AND WORKS TO HERE === ***
-
 # converting area values
     # if value is in km2
     if x in KM2:
-        km = float(y)
+        km2 = float(y)
         print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(km2*1000000, 4)))
         print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round(km2*0.386102, 4)))
         print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(km2*0.000001196, 4)))
@@ -330,7 +326,8 @@ def declaring():
               format(round(mile2*2.58999, 4)))
         print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(mile2*2590000, 4)))
         print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(mile2*3098000, 4)))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round(mile2*2.7880000, 4)))
+        print(f'Feet\N{SUPERSCRIPT TWO}: ',
+              format(round((mile2*27878400), 4)))
         print(f'Inches\N{SUPERSCRIPT TWO}: ',
               format(round(mile2*4014000000, 4)))
         print('Acres: ', format(round(mile2*640, 4)))
@@ -339,61 +336,65 @@ def declaring():
     # if value is in acres
     elif x in ACRE:
         acre = float(y)
-        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
-        print('Acres: ', format(round()))
-        print('Hectares: ', format(round()))
+        print(f'Kilometers\N{SUPERSCRIPT TWO}: ',
+              format(round(acre*0.00404686, 4)))
+        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(acre*4046.85, 4)))
+        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round(acre*0.0015625, 4)))
+        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(acre*4840, 4)))
+        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round(acre*43560, 4)))
+        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round(acre*6273000, 4)))
+        print('Hectares: ', format(round(acre*0.404686, 4)))
     # if value is in hectares
     elif x in HECT:
         hect = float(y)
-        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
-        print('Acres: ', format(round()))
-        print('Hectares: ', format(round()))
+        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round(hect*0.01, 4)))
+        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(hect*10000, 4)))
+        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round(hect*0.00386102, 4)))
+        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(hect*11959.9, 4)))
+        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round(hect*107639, 4)))
+        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round(hect*15500000, 4)))
+        print('Acres: ', format(round(hect*2.47105, 4)))
     # if value is in yards2
     elif x in Y2:
         y2 = float(y)
-        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
-        print('Acres: ', format(round()))
-        print('Hectares: ', format(round()))
+        print(f'Kilometers\N{SUPERSCRIPT TWO}: ',
+              format(round(y2*0.00000083613, 4)))  # test
+        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(y2/1.196, 4)))
+        print(f'Miles\N{SUPERSCRIPT TWO}: ',
+              format(round(y2*0.00000032283, 4)))
+        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round(y2*9, 4)))
+        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round(y2*1296, 4)))
+        print('Acres: ', format(round(y2*0.000206612, 4)))
+        print('Hectares: ', format(round(y2*0.000083613, 4)))
         print('')
     # if value is in feet2
     elif x in F2:
         f2 = float(y)
-        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
-        print('Acres: ', format(round()))
-        print('Hectares: ', format(round()))
+        print(f'Kilometers\N{SUPERSCRIPT TWO}: ',
+              format(round(f2*0.000000092903, 4)))  # test
+        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(f2*0.092903, 4)))
+        print(f'Miles\N{SUPERSCRIPT TWO}: ',
+              format(round(f2*0.00000003587, 4)))
+        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(f2*0.111111, 4)))
+        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round(f2*144, 4)))
+        print('Acres: ', format(round(f2/43560, 4)))
+        print('Hectares: ', format(round(f2/107600, 4)))
         print('')
     # if value is in inches2
     elif x in IN2:
         in2 = float(y)
-        print(f'Kilometers\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Miles\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round()))
-        print(f'Inches\N{SUPERSCRIPT TWO}: ', format(round()))
-        print('Acres: ', format(round()))
-        print('Hectares: ', format(round()))
+        print(f'Kilometers\N{SUPERSCRIPT TWO}: ',
+              format(round(in2*0.00000000064516, 4)))
+        print(f'Meters\N{SUPERSCRIPT TWO}: ', format(round(in2*0.00064516, 4)))
+        print(f'Miles\N{SUPERSCRIPT TWO}: ',
+              format(round(in2*0.0000000002491, 4)))
+        print(f'Yards\N{SUPERSCRIPT TWO}: ', format(round(in2*0.000771605, 4)))
+        print(f'Feet\N{SUPERSCRIPT TWO}: ', format(round(in2*0.00694444, 4)))
+        print('Acres: ', format(round(in2*0.00000015942, 4)))
+        print('Hectares: ', format(round(in2*0.000000064516, 4)))
         print('')
+
+# *** === TESTED AND WORKS TO HERE === ***
 
 
 declaring()
