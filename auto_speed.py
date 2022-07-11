@@ -2,6 +2,7 @@ import speedtest
 import time
 
 speed = speedtest.Speedtest()
+loop_count = 0
 
 
 def humansize(nbits):
@@ -14,31 +15,25 @@ def humansize(nbits):
     return '%s %s' % (f, suffixes[i])
 
 
-entry = int(input(
-    '''Test options --> \n\n 1) Download Speed \n 2) Upload Speed \n 3) Ping \n
-            4) To quit program \n\n Select a number to test: '''))
+entry = input('Hit enter to run test')
+if len(entry) < 1:
 
-while True:
+    while loop_count < 2:
 
-    if entry == 1:
-        print('\nTesting download speed...')
+        print('Loop: ', loop_count + 1)
+
         ds = speed.download()
         print('\n', 'Download speed: ', humansize(ds), '\n')
-    elif entry == 2:
-        print('\nTesting upload speed...')
+
         us = speed.upload()
         print('\n', 'Upload speed: ', humansize(us), '\n')
-    elif entry == 3:
-        print('\nChecking da ping ping yo...')
+
         servernames = []
         speed.get_servers(servernames)
         print('\n', 'Ping:', speed.results.ping, 'ms\n')
-    elif entry == 4:
-        print('\nquitting...\n')
-        time.sleep(1)
-        quit()
-    else:
-        print('\nPlease enter a valid number\n')
 
-    retry = int(input('Select a number: '))
-    entry = retry
+        loop_count += 1
+
+        time.sleep(30)
+
+print('loops: ', loop_count)
