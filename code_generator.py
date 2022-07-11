@@ -13,5 +13,4 @@ def encode(word):
         word = word.replace(x, y)
     return word
 
-
 print(encode(message))
