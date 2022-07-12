@@ -4,9 +4,12 @@ import time
 speed = speedtest.Speedtest()
 loop_count = 0
 
+# lists to store data speeds
+
 ds_list = []
 us_list = []
-ping_list = []
+
+# function to demonstrate numbers in correct format
 
 
 def humansize(nbits):
@@ -18,50 +21,46 @@ def humansize(nbits):
     f = ('%.2f' % nbits).rstrip('0').rstrip('.')
     return '%s %s' % (f, suffixes[i])
 
+# loop to go through speeds
+
 
 entry = input('Hit enter to run test')
 if len(entry) < 1:
 
-    while loop_count < 100:
+    while loop_count < 5:  # this is the number of times program will loop
 
         print('Loop: ', loop_count + 1)
+
+        # check download speed
 
         ds = speed.download()
         ds_list.append(ds)
         print('\n', 'Download speed: ', humansize(ds), '\n')
 
+        # check upload speeds
+
         us = speed.upload()
         us_list.append(us)
         print('\n', 'Upload speed: ', humansize(us), '\n')
 
-        servernames = []
-        speed.get_servers(servernames)
-        ping_list.append(ping_list)
-        print('\n', 'Ping:', speed.results.ping, 'ms\n')
-
         loop_count += 1
 
-        time.sleep(30)
+        # time to elapse between loops
 
-print('loops: ', loop_count)
-print(ds_list)
-print(us_list)
-print(ping_list)
+        time.sleep(300)
 
-for i in ds_list:
-    i += i
-    print(i)
-    x = i/len(ds_list)
-print('Average download speed: ', x)
+print('Loops completed: ', loop_count, '\n')
 
-for j in us_list:
-    j += j
-    print(j)
-    y = j/len(ds_list)
-print('Average upload speed: ', y)
+# if you want to view lists (in bits) you can un-hash below
 
-for l in ping_list:
-    l += l
-    print(l)
-    z = l/len(ds_list)
-print('Average ping: ', z)
+# print(ds_list)
+# print(us_list)
+
+# calculate average and compensate for correct values
+
+x = float(round(sum(ds_list)/len(ds_list), 2))
+x2 = humansize(x)
+print('Average download speed: ', x2)
+y = float(round(sum(us_list)/len(us_list), 2))
+y2 = humansize(y)
+print('Average upload speed: ', y2, '\n')
