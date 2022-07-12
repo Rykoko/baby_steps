@@ -18,11 +18,6 @@ def roll():
 
 while True:
 
-    # define dice variables
-
-    dice1 = random.randint(1, 6)
-    dice2 = random.randint(1, 6)
-
     # ask for player's input
 
     ask = input('Do you want to roll the dice (Y/N)? ')
