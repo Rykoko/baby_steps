@@ -18,6 +18,10 @@ while rounds < 3:
     player_choice = input('Pick an option [Rock, Paper, Scissors]: ').lower()
     comp_choice = random.choice(options).lower()
 
+    for option in options:
+        print(option)
+        time.sleep(0.4)
+
     def play(player_choice, comp_choice):
         global AI
         global Player
@@ -51,5 +55,7 @@ while rounds < 3:
             rounds = 0
             Player = 0
             AI = 0
+            print('Loading new game...')
+            time.sleep(1.0)
         else:
             quit()
