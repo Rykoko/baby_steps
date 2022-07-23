@@ -1,7 +1,7 @@
 import random
 import time
 
-# function for double rolls
+# function for rolls
 
 
 def roll():
@@ -13,8 +13,8 @@ def roll():
     print(dice1 + dice2)
     return dice1, dice2
 
-
 # while loop to maintain game as long as player indicates 'Y'
+
 
 while True:
 
