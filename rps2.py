@@ -7,7 +7,7 @@ Player = 0
 
 while rounds < 3:
 
-    options = ['rock', 'paper', 'scissors']
+    options = ['Rock', 'Paper', 'Scissors']
 
     loses_to = {
         'paper': 'rock',
@@ -15,8 +15,8 @@ while rounds < 3:
         'scissors': 'paper',
     }
 
-    player_choice = input('Pick an option [Rock, Paper, Scissors]: ')
-    comp_choice = random.choice(options)
+    player_choice = input('Pick an option [Rock, Paper, Scissors]: ').lower()
+    comp_choice = random.choice(options).lower()
 
     def play(player_choice, comp_choice):
         global AI
