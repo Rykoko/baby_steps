@@ -1,6 +1,4 @@
-import random
-
-message = input('What would you like to encode?: ')
+message = input('What would you like to encode? ')
 
 
 def encode(word):
@@ -12,5 +10,6 @@ def encode(word):
     for (x, y) in replacements:
         word = word.replace(x, y)
     return word
+
 
 print(encode(message))
