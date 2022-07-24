@@ -36,6 +36,6 @@ url = input('Paste the url that you want to shorten: ')
 shorten_res = requests.post("https://api-ssl.bitly.com/v4/shorten",
                             json={"group_guid": guid, "long_url": url}, headers=headers)
 # if shorten_res.status_code == 200:
-    #if response is ok, get the shortened URL
+#if response is ok, get the shortened URL
 link = shorten_res.json().get("link")
 print("Shortened URL: ", link)
